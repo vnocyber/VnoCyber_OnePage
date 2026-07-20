@@ -9,10 +9,11 @@
 body {
 
     min-height: 100vh;
-    background:
-    radial-gradient(circle at top, #1a0000, #000000 60%);
 
-    color: #ffffff;
+    background:
+    radial-gradient(circle at top, #250000, #000000 65%);
+
+    color: white;
 
     overflow-x: hidden;
 
@@ -20,41 +21,51 @@ body {
 
 
 
-/* Scanline effect */
+/* Cyber scan effect */
 
 .scan {
 
     position: fixed;
 
+    top: 0;
+    left: 0;
+
     width: 100%;
     height: 100%;
 
     background:
+
     linear-gradient(
         transparent 50%,
-        rgba(255,0,0,0.05) 50%
+        rgba(255,0,50,0.06) 50%
     );
 
-    background-size: 100% 4px;
+    background-size:100% 5px;
 
-    pointer-events: none;
+    pointer-events:none;
 
-    animation: scanMove 8s linear infinite;
+    animation: scan 8s linear infinite;
 
 }
 
 
-@keyframes scanMove {
+
+@keyframes scan {
 
     from {
+
         background-position:0 0;
+
     }
 
     to {
+
         background-position:0 100%;
+
     }
 
 }
+
 
 
 
@@ -76,30 +87,37 @@ body {
 
 
 
+
 .alert-box {
 
     width:100%;
 
     max-width:750px;
 
+
     background:
-    rgba(0,0,0,0.85);
+
+    rgba(0,0,0,0.88);
+
 
     border:1px solid #ff0033;
 
+
     padding:35px;
+
 
     border-radius:15px;
 
 
+    text-align:center;
+
+
     box-shadow:
 
-    0 0 25px rgba(255,0,50,.7),
+
+    0 0 30px rgba(255,0,50,.7),
 
     inset 0 0 30px rgba(255,0,50,.1);
-
-
-    text-align:center;
 
 }
 
@@ -107,25 +125,103 @@ body {
 
 
 
-.logo img {
+/* Profile */
 
-    width:140px;
 
-    height:140px;
+.profile {
+
+    margin-bottom:30px;
+
+}
+
+
+
+.profile img {
+
+
+    width:220px;
+
+    height:220px;
+
 
     object-fit:cover;
 
-    border-radius:50%;
 
-    border:3px solid #ff0033;
+    border-radius:15px;
+
+
+    border:2px solid #ff0033;
 
 
     box-shadow:
 
-    0 0 25px #ff0033;
+
+    0 0 25px rgba(255,0,50,.8);
 
 
-    margin-bottom:25px;
+
+    transition:.3s;
+
+
+}
+
+
+
+.profile img:hover {
+
+
+    transform:scale(1.05);
+
+
+    box-shadow:
+
+
+    0 0 40px #ff0033;
+
+
+}
+
+
+
+
+
+.profile-info {
+
+
+    margin-top:15px;
+
+
+}
+
+
+
+.profile-info h3 {
+
+
+    color:#00ff88;
+
+
+    font-size:14px;
+
+
+    letter-spacing:3px;
+
+
+}
+
+
+
+.profile-info p {
+
+
+    margin-top:8px;
+
+
+    font-size:18px;
+
+
+    color:white;
+
 
 }
 
@@ -138,17 +234,25 @@ body {
 
 .glitch {
 
+
     position:relative;
+
 
     font-size:35px;
 
+
     color:#ff0033;
+
 
     text-transform:uppercase;
 
+
     margin-bottom:20px;
 
+
 }
+
+
 
 
 
@@ -158,50 +262,65 @@ body {
 
     content:attr(data-text);
 
+
     position:absolute;
+
 
     left:0;
 
+
     width:100%;
 
+
 }
+
 
 
 .glitch::before {
 
+
     color:#00ffff;
+
 
     transform:translate(-3px);
 
-    animation:glitchOne 1s infinite;
+
+    animation:glitch1 1s infinite;
+
 
 }
+
 
 
 .glitch::after {
 
-    color:#ffffff;
+
+    color:white;
+
 
     transform:translate(3px);
 
-    animation:glitchTwo 1s infinite;
+
+    animation:glitch2 1s infinite;
+
 
 }
 
 
 
 
-@keyframes glitchOne {
+
+@keyframes glitch1 {
 
 
-    0%,100%{
+    0%,100% {
 
         clip-path:inset(0);
 
     }
 
 
-    50%{
+    50% {
 
         clip-path:inset(40% 0 20% 0);
 
@@ -211,17 +330,18 @@ body {
 
 
 
-@keyframes glitchTwo {
+
+@keyframes glitch2 {
 
 
-    0%,100%{
+    0%,100% {
 
         clip-path:inset(80% 0 0 0);
 
     }
 
 
-    50%{
+    50% {
 
         clip-path:inset(10% 0 60% 0);
 
@@ -232,18 +352,26 @@ body {
 
 
 
+
 h2 {
+
 
     color:#ff0033;
 
-    letter-spacing:3px;
+
+    letter-spacing:4px;
+
 
     margin-bottom:25px;
+
 
 }
 
 
 
+
+
+/* Terminal */
 
 
 .terminal {
@@ -251,50 +379,70 @@ h2 {
 
     background:#050505;
 
+
     border:1px solid #333;
+
 
     padding:20px;
 
+
     text-align:left;
 
-    min-height:100px;
+
+    min-height:120px;
+
 
     margin-bottom:25px;
 
 
     color:#00ff88;
 
+
     box-shadow:
 
-    inset 0 0 15px rgba(0,255,100,.2);
+
+    inset 0 0 20px rgba(0,255,100,.15);
+
+
+    line-height:1.7;
+
 
 }
 
 
+
+
+
+/* Content */
 
 
 .content {
 
 
+    text-align:left;
+
+
     color:#dddddd;
 
-    line-height:1.8;
-
-    text-align:left;
 
     font-size:15px;
 
-}
 
+    line-height:1.8;
+
+
+}
 
 
 
 .content h3 {
 
 
+    margin-top:20px;
+
+
     color:#ff0033;
 
-    margin-top:20px;
 
 }
 
@@ -305,12 +453,16 @@ h2 {
 
     margin:15px 0 15px 25px;
 
+
 }
+
 
 
 .content li {
 
+
     margin-bottom:8px;
+
 
 }
 
@@ -323,13 +475,18 @@ footer {
 
     margin-top:30px;
 
+
     color:#ff0033;
 
-    font-size:16px;
 
-    letter-spacing:1px;
+    letter-spacing:2px;
+
+
+    font-size:15px;
+
 
 }
+
 
 
 
@@ -337,24 +494,54 @@ footer {
 @media(max-width:600px){
 
 
-    .alert-box{
+    .alert-box {
+
 
         padding:20px;
 
+
     }
 
 
-    .glitch{
+
+    .profile img {
+
+
+        width:170px;
+
+        height:170px;
+
+
+    }
+
+
+
+    .glitch {
+
 
         font-size:23px;
 
+
     }
 
 
-    .content{
+
+    h2 {
+
+
+        font-size:16px;
+
+
+    }
+
+
+
+    .content {
+
 
         font-size:14px;
 
     }
+
 
 }
