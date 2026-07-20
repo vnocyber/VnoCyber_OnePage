@@ -3,23 +3,23 @@ const background = document.querySelector(".code-background");
 
 const codes = [
 
-"010101 SYSTEM",
+"VnoCyber H-X",
 
-"0x00FF41 ACCESS",
+"ЦИФРОВАЯ ЛИЧНОСТЬ",
 
-"CYBER NODE 2048",
+"SYSTEM ONLINE",
 
-"ENCRYPTED DATA",
+"CYBER IDENTITY",
 
-"SECURITY PROTOCOL",
+"DATA STREAM",
 
-"SYSTEM CHECK OK",
+"SECURITY CORE",
 
-"NETWORK STATUS",
+"01010101",
 
-"0011 8892",
+"ENCRYPTED NODE",
 
-"VNOSEC CORE"
+"TECHNOLOGY"
 
 ];
 
@@ -28,36 +28,37 @@ const codes = [
 function createCode(){
 
 
-const span = document.createElement("span");
+const code=document.createElement("span");
 
 
-span.innerText =
+
+code.innerText =
 codes[Math.floor(Math.random()*codes.length)];
 
 
 
-span.style.left =
+code.style.left =
 Math.random()*95+"%";
 
 
 
-span.style.animationDuration =
+code.style.animationDuration =
 (15 + Math.random()*15)+"s";
 
 
 
-span.style.fontSize =
+code.style.fontSize =
 (12 + Math.random()*10)+"px";
 
 
 
-background.appendChild(span);
+background.appendChild(code);
 
 
 
 setTimeout(()=>{
 
-span.remove();
+code.remove();
 
 },30000);
 
