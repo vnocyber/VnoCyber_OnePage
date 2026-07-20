@@ -3,9 +3,10 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:"Courier New", monospace;
+font-family:"Courier New",monospace;
 
 }
+
 
 
 body{
@@ -14,7 +15,7 @@ min-height:100vh;
 
 background:
 
-radial-gradient(circle at top,#003b1f,#000000 65%);
+radial-gradient(circle at top,#003b1f,#000);
 
 color:white;
 
@@ -24,11 +25,14 @@ overflow:hidden;
 
 
 
+
+
 .scan{
 
 position:fixed;
 
 inset:0;
+
 
 background:
 
@@ -40,9 +44,9 @@ rgba(0,255,65,.05) 50%
 
 background-size:100% 5px;
 
-pointer-events:none;
 
 z-index:1;
+
 
 }
 
@@ -55,13 +59,16 @@ width:100%;
 
 min-height:100vh;
 
+
 display:flex;
 
 justify-content:center;
 
 align-items:center;
 
+
 padding:30px;
+
 
 }
 
@@ -69,22 +76,23 @@ padding:30px;
 
 
 
-.alert-box{
+.profile-page{
 
 
 width:100%;
 
+
 min-height:100vh;
-
-
-background:transparent;
 
 
 display:flex;
 
+
 flex-direction:column;
 
+
 justify-content:center;
+
 
 align-items:center;
 
@@ -92,7 +100,7 @@ align-items:center;
 text-align:center;
 
 
-padding:50px;
+padding:40px;
 
 
 position:relative;
@@ -107,18 +115,22 @@ z-index:2;
 
 
 
+/* PROFILE IMAGE BESAR */
+
+
 .profile img{
 
 
-width:260px;
+width:350px;
 
-height:260px;
+
+height:350px;
 
 
 object-fit:cover;
 
 
-border-radius:20px;
+border-radius:25px;
 
 
 border:3px solid #00ff41;
@@ -126,7 +138,28 @@ border:3px solid #00ff41;
 
 box-shadow:
 
-0 0 35px #00ff41;
+
+0 0 45px #00ff41;
+
+
+transition:.3s;
+
+
+}
+
+
+
+
+.profile img:hover{
+
+
+transform:scale(1.03);
+
+
+box-shadow:
+
+
+0 0 60px #00ff41;
 
 
 }
@@ -135,33 +168,38 @@ box-shadow:
 
 
 
-.profile-info{
-
-margin-top:20px;
-
-}
+.profile h3{
 
 
+margin-top:25px;
 
-.profile-info h3{
 
 color:#00ff41;
 
-letter-spacing:5px;
+
+letter-spacing:4px;
+
 
 font-size:15px;
 
+
 }
 
 
 
-.profile-info p{
+
+
+.profile p{
+
 
 color:#00ff41;
 
-font-size:20px;
+
+font-size:24px;
+
 
 margin-top:10px;
+
 
 }
 
@@ -172,24 +210,26 @@ margin-top:10px;
 .glitch{
 
 
-font-size:55px;
+font-size:60px;
 
 
 color:#00ff41;
 
 
+margin:35px 0;
+
+
 position:relative;
-
-
-margin:30px 0;
 
 
 text-shadow:
 
-0 0 20px #00ff41;
+
+0 0 25px #00ff41;
 
 
 }
+
 
 
 
@@ -214,6 +254,8 @@ width:100%;
 
 
 
+
+
 .glitch::before{
 
 
@@ -223,7 +265,7 @@ color:white;
 transform:translate(-3px);
 
 
-animation:g1 1s infinite;
+animation:glitch1 1s infinite;
 
 
 }
@@ -239,7 +281,7 @@ color:#00ff41;
 transform:translate(3px);
 
 
-animation:g2 1s infinite;
+animation:glitch2 1s infinite;
 
 
 }
@@ -247,7 +289,8 @@ animation:g2 1s infinite;
 
 
 
-@keyframes g1{
+
+@keyframes glitch1{
 
 
 50%{
@@ -256,13 +299,11 @@ clip-path:inset(40% 0 20% 0);
 
 }
 
-
 }
 
 
 
-
-@keyframes g2{
+@keyframes glitch2{
 
 
 50%{
@@ -270,7 +311,6 @@ clip-path:inset(40% 0 20% 0);
 clip-path:inset(10% 0 60% 0);
 
 }
-
 
 }
 
@@ -299,7 +339,13 @@ margin-bottom:30px;
 .terminal{
 
 
-background:rgba(0,0,0,.8);
+width:90%;
+
+
+max-width:850px;
+
+
+background:#000;
 
 
 border:1px solid #00ff41;
@@ -308,31 +354,19 @@ border:1px solid #00ff41;
 padding:25px;
 
 
-width:90%;
-
-
-max-width:800px;
-
-
 text-align:left;
-
-
-line-height:2;
 
 
 color:#00ff41;
 
 
-border-radius:10px;
+line-height:2;
 
 
 box-shadow:
 
 
-inset 0 0 25px rgba(0,255,65,.2);
-
-
-margin-bottom:30px;
+0 0 25px rgba(0,255,65,.2);
 
 
 }
@@ -347,13 +381,16 @@ margin-bottom:30px;
 max-width:900px;
 
 
+margin-top:30px;
+
+
+color:#d8ffd8;
+
+
 font-size:18px;
 
 
 line-height:2;
-
-
-color:#d8ffd8;
 
 
 }
@@ -373,10 +410,12 @@ margin-top:25px;
 
 
 
+
+
 .content ul{
 
 
-margin:15px 0;
+margin:15px;
 
 
 list-style-position:inside;
@@ -387,10 +426,11 @@ list-style-position:inside;
 
 
 
+
 footer{
 
 
-margin-top:35px;
+margin-top:40px;
 
 
 color:#00ff41;
@@ -404,7 +444,8 @@ letter-spacing:3px;
 
 
 
-/* kode abstrak */
+
+/* BACKGROUND CODE */
 
 
 .code-background{
@@ -427,7 +468,6 @@ z-index:0;
 
 
 
-
 .code-background span{
 
 
@@ -444,7 +484,6 @@ animation:fall linear forwards;
 
 
 }
-
 
 
 
@@ -476,11 +515,13 @@ opacity:0;
 
 }
 
-
 }
 
 
 
+
+
+/* MOBILE */
 
 
 @media(max-width:700px){
@@ -488,9 +529,12 @@ opacity:0;
 
 .profile img{
 
-width:180px;
 
-height:180px;
+width:220px;
+
+
+height:220px;
+
 
 }
 
@@ -498,7 +542,19 @@ height:180px;
 
 .glitch{
 
-font-size:30px;
+
+font-size:32px;
+
+
+}
+
+
+
+.profile p{
+
+
+font-size:20px;
+
 
 }
 
@@ -506,7 +562,9 @@ font-size:30px;
 
 .content{
 
+
 font-size:14px;
+
 
 }
 
@@ -514,7 +572,9 @@ font-size:14px;
 
 .terminal{
 
+
 font-size:13px;
+
 
 }
 
