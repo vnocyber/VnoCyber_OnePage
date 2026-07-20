@@ -1,72 +1,76 @@
-const text = `
-> Security review initiated...
-
-> Analyzing system configuration...
-
-> Multiple security weaknesses detected.
-
-> Reviewing protection measures...
-
-> Security recommendations generated.
-
-> Continuous monitoring is required.
-
-> Assessment completed.
-`;
-
-let index = 0;
-
-const typingElement = document.getElementById("typing");
+const container = document.querySelector(".code-background");
 
 
-function typeEffect(){
+const codes = [
 
-    if(index < text.length){
+"010101 8472 0011",
 
-        typingElement.innerHTML += text.charAt(index);
+"VX-4928 SYSTEM",
 
-        index++;
+"1010 7741 SECURITY",
 
-        setTimeout(typeEffect, 35);
+"0xF92A ACCESS",
 
-    }
+"CYBER NODE 2048",
 
-}
+"ENCRYPTED DATA",
+
+"SYSTEM CHECK OK",
+
+"SECURITY PROTOCOL",
+
+"NETWORK STATUS"
+
+];
 
 
 
-typeEffect();
+function createCode(){
+
+
+const text = document.createElement("span");
+
+
+text.innerText =
+codes[Math.floor(Math.random()*codes.length)];
 
 
 
-
-
-// Cursor terminal effect
-
-const cursor = document.createElement("span");
-
-cursor.innerHTML = "_";
-
-cursor.style.animation = "blink 0.8s infinite";
-
-typingElement.appendChild(cursor);
+text.style.left =
+Math.random()*90+"%";
 
 
 
-const style = document.createElement("style");
+text.style.animationDuration =
+(15 + Math.random()*15)+"s";
 
-style.innerHTML = `
 
-@keyframes blink {
 
-    50% {
+text.style.fontSize =
+(14 + Math.random()*8)+"px";
 
-        opacity:0;
 
-    }
+
+container.appendChild(text);
+
+
+
+setTimeout(()=>{
+
+text.remove();
+
+},30000);
+
 
 }
 
-`;
 
-document.head.appendChild(style);
+
+
+setInterval(()=>{
+
+
+createCode();
+
+
+},5000);
