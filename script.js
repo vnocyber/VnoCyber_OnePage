@@ -1,41 +1,72 @@
 const text = `
-Security assessment completed.
+> Security review initiated...
 
-A vulnerability was identified and successfully resolved in the controlled testing environment.
+> Analyzing system configuration...
 
-This page is a demonstration of controlled security testing.
-Showing the importance of strong protection, proper configuration, and continuous monitoring.
+> Multiple security weaknesses detected.
+
+> Reviewing protection measures...
+
+> Security recommendations generated.
+
+> Continuous monitoring is required.
+
+> Assessment completed.
 `;
 
 let index = 0;
 
-const typing = document.getElementById("typing");
+const typingElement = document.getElementById("typing");
 
 
-function typeWriter(){
+function typeEffect(){
 
     if(index < text.length){
 
-        typing.innerHTML += text.charAt(index);
+        typingElement.innerHTML += text.charAt(index);
 
         index++;
 
-        setTimeout(typeWriter,25);
+        setTimeout(typeEffect, 35);
 
     }
 
 }
 
 
-typeWriter();
+
+typeEffect();
 
 
 
-/* random terminal flicker */
 
-setInterval(()=>{
 
-    document.querySelector(".security-box")
-    .style.opacity = Math.random() > 0.97 ? "0.8" : "1";
+// Cursor terminal effect
 
-},200);
+const cursor = document.createElement("span");
+
+cursor.innerHTML = "_";
+
+cursor.style.animation = "blink 0.8s infinite";
+
+typingElement.appendChild(cursor);
+
+
+
+const style = document.createElement("style");
+
+style.innerHTML = `
+
+@keyframes blink {
+
+    50% {
+
+        opacity:0;
+
+    }
+
+}
+
+`;
+
+document.head.appendChild(style);
